@@ -1,14 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Google Slides Kiosk</title>
-  <meta http-equiv="refresh" content="120;url=https://docs.google.com/presentation/d/e/2PACX-1vSRIANHain3rmHtXaHpOhi9hXL9fulus2BBWTMq9FL55VHa2u016zsZHfmWTNrVrL4ou7AG7pvTNHJJ/pub?start=true&loop=true&delayms=3000">
-</head>
-<body>
-  <p>Loading slideshow...</p>
-  <script>
-    window.location.href = "https://docs.google.com/presentation/d/e/2PACX-1vSRIANHain3rmHtXaHpOhi9hXL9fulus2BBWTMq9FL55VHa2u016zsZHfmWTNrVrL4ou7AG7pvTNHJJ/pub?start=true&loop=true&delayms=3000";
-  </script>
-</body>
+<html>
+  <head>
+    <title>Auto-Reload Google Slides</title>
+    <script>
+      function start() {
+        // Force full-page reload every 2 minutes
+        setTimeout(() => {
+          window.location.reload(true);
+        }, 120000); // 120000 ms = 2 minutes
+      }
+      window.onload = () => {
+        // Redirect immediately to the slideshow
+        window.location.href = "https://docs.google.com/presentation/d/e/2PACX-1vSRIANHain3rmHtXaHpOhi9hXL9fulus2BBWTMq9FL55VHa2u016zsZHfmWTNrVrL4ou7AG7pvTNHJJ/pub?start=true&loop=true&delayms=3000";
+        start();
+      };
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to slideshow...</p>
+  </body>
 </html>
